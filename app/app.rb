@@ -7,7 +7,11 @@ class EtsyJson < Sinatra::Base
 
   get '/price' do
     listings = Listings.new
-    listings.price.to_s
+    listings.price
   end
 
+  get '/quantity' do
+    listings = Listings.new
+    listings.quantity
+  end
 end
