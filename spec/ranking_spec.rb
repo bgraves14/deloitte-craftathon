@@ -1,4 +1,4 @@
-require_relative '../app/lib/ranking'
+require_relative '../app/models/ranking'
 
 describe Ranking do
   file = File.read('data.txt')
