@@ -18,6 +18,39 @@ class Listings
     [max, min, average]
   end
 
+  def material_ranking
+    data = EtsyData.get_data
+    all_materials = all_objects(data, 'materials')
+    numbered_hash = map_to_hash all_materials
+    sorted_array = sort_by_occurence numbered_hash
+    cleaned_up_array = remove_occurences sorted_array
+    most_popular_materials = most_popular cleaned_up_array
+    items = most_popular_items(data, 'materials', most_popular_materials)
+    {most_popular_materials: most_popular_materials, most_popular_items: items}.to_json
+  end
+
+  def tag_ranking
+    data = EtsyData.get_data
+    all_materials = all_objects(data, 'tags')
+    numbered_hash = map_to_hash all_materials
+    sorted_array = sort_by_occurence numbered_hash
+    cleaned_up_array = remove_occurences sorted_array
+    most_popular_materials = most_popular cleaned_up_array
+    items = most_popular_items(data, 'tags', most_popular_materials)
+    {most_popular_tags: most_popular_materials, most_popular_items: items}.to_json
+  end
+
+  def category_ranking
+    data = EtsyData.get_data
+    all_materials = all_objects(data, 'category_path')
+    numbered_hash = map_to_hash all_materials
+    sorted_array = sort_by_occurence numbered_hash
+    cleaned_up_array = remove_occurences sorted_array
+    most_popular_materials = most_popular cleaned_up_array
+    items = most_popular_items(data, 'category_path', most_popular_materials)
+    {most_popular_categories: most_popular_materials, most_popular_items: items}.to_json
+  end
+
   private
 
 
