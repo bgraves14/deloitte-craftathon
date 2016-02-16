@@ -1,6 +1,7 @@
 require_relative "calculator"
 require_relative "ranking"
 require 'money'
+require 'json'
 require 'money/bank/google_currency'
 require_relative 'etsy-data'
 Money.default_bank = Money::Bank::GoogleCurrency.new
@@ -10,12 +11,13 @@ class Listings
   include Ranking
 
   def price
-    data = EtsyData.get_data
-    convert_currency(data)
-    average = average(data, 'converted_price')
-    min = minimum(data, 'converted_price')
-    max = maximum(data, 'converted_price')
-    [max, min, average]
+    data = get_converted_etsy_data
+    get_values(data, 'converted_price')
+  end
+
+  def quantity
+    data = get_converted_etsy_data
+    get_values(data, 'quantity')
   end
 
   def material_ranking
@@ -53,6 +55,20 @@ class Listings
 
   private
 
+  def get_values(data, field)
+    {
+      average: average(data, field),
+      max: maximum(data, field),
+      max_item: get_most_expensive_product(data, field),
+      min: minimum(data, field),
+      min_item: get_minimum_product(data, field)
+    }.to_json
+  end
+
+  def get_converted_etsy_data
+    data = EtsyData.get_data
+    convert_currency(data)
+  end
 
   def convert_currency(data)
    data.each do |object|
