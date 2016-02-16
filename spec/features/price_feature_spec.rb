@@ -31,9 +31,4 @@ feature "etsy price" do
     expect(page).to have_content("244")
   end
 
-  scenario 'it shows the most common materials' do
-    visit '/materials'
-    expect(page).to have_content("gold")
-  end
-
 end

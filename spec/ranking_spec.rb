@@ -3,6 +3,8 @@ require_relative '../app/models/ranking'
 describe Ranking do
   file = File.read('data.txt')
   mock_data = JSON.parse(file)['results']
+  let(:subject) { Class.new { extend Ranking}}
+
 
   it 'returns an array of all the materials used' do
     expect(subject.all_objects mock_data, 'materials').to eq( ["agate", "Tibetan silver", "Vintage Silk Kimono Obi", "gold", "black", "card", "memory", "a special cotton texture", "Chain", "Hoop Frame", "Fabric", "Wood", "Recycled", "Brooch pin", "Parrot clasp", "40s Black Cameo locket", "lightweight polyester", "wall art", "home decor", "waxed yarn from Thailand", "cowry shell", "brass beads", "howlite beads", "coconut button", "yak", "wool", "blended fabric", "paper", "ink", "acrylic yarn", "organic catnip", "polyesterfiberfill", "citrine", "gold", "Canson 140 lb white watercolor paper", "pro paint", "illustrator", "photoshop", "paper", "digital download", "jpg", "png", "vector art", "eps", "925 Sterling Silver", "gold clasp", "copper", "fabric", "cotton", "wool blend", "cotton blend with spandex", "925 Sterling Silver", "CUBIC ZIRCONIA", "14K Gold Filled"] )
