@@ -1,6 +1,9 @@
 # craftathon
 
 
+See a live version on [**Heroku**](http://craftathonetsy.herokuapp.com/price)
+
+
 Here is the brief we received:
 
 ```
@@ -24,5 +27,3 @@ Extensions:
 - by default, the API returns only 25 listings per query. Extend the above to the 100 recent items, passing the limit as a query string parameter
 - create the route POST /report, which takes a query string parameter and e-mails the aggregated JSON from GET / to the email specified
 ```
-
-A version is live at <a href="http://craftathonetsy.herokuapp.com/price">Heroku</a>
