@@ -19,6 +19,14 @@ describe Calculator do
       expect(subject.maximum(mock_data, 'price')).to eq(350)
     end
 
+    it 'returns the cheapest item' do
+      expect(subject.get_minimum_product(mock_data, 'price')).to eq(mock_data[2])
+    end
+
+    it 'returns the most expensive item' do
+      expect(subject.get_most_expensive_product(mock_data, 'price')).to eq(mock_data[13])
+    end
+
     it 'calculates the correct average quantity' do
       expect(subject.average(mock_data, 'quantity')).to eq(4)
     end
@@ -29,6 +37,14 @@ describe Calculator do
 
     it 'calculates the correct maximum quantity' do
       expect(subject.maximum(mock_data, 'quantity')).to eq(12)
+    end
+
+    it 'returns the item with the lowest quantity' do
+      expect(subject.get_minimum_product(mock_data, 'quantity')).to eq(mock_data[2])
+    end
+
+    it 'returns the item with the highest quantity' do
+      expect(subject.get_most_expensive_product(mock_data, 'quantity')).to eq(mock_data[4])
     end
   end
 end
