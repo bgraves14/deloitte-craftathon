@@ -1,9 +1,10 @@
 require 'json'
-require_relative '../app/lib/calculator.rb'
+require_relative '../app/models/calculator.rb'
 
 describe Calculator do
   file = File.read('data.txt')
   mock_data = JSON.parse(file)['results']
+  let(:subject) { Class.new { extend Calculator}}
 
   describe 'price calculator' do
     it 'calculates the correct average of the prices' do
