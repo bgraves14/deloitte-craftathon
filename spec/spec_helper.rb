@@ -8,7 +8,7 @@ Capybara.app = EtsyJson
 
 RSpec.configure do |config|
 
-  include Capybara::DSL
+  config.include Capybara::DSL, :type => :feature
 
   config.expect_with :rspec do |expectations|
     expectations.include_chain_clauses_in_custom_matcher_descriptions = true
