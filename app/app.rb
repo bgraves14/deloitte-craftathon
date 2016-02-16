@@ -14,4 +14,23 @@ class EtsyJson < Sinatra::Base
     listings = Listings.new
     listings.quantity
   end
+
+  get '/materials' do
+    "Materials"
+    listings = Listings.new
+    listings.material_ranking.to_s
+  end
+
+  get '/tags' do
+    "Tags"
+    listings = Listings.new
+    listings.tag_ranking.to_s
+  end
+
+  get '/categories' do
+    "Categories"
+    listings = Listings.new
+    listings.category_ranking.to_s
+  end
+
 end
