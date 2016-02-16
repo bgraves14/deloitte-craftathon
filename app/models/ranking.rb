@@ -38,5 +38,4 @@ module Ranking
     end
     most_popular_items
   end
-
 end

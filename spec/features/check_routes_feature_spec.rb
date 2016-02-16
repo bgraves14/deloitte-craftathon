@@ -28,7 +28,7 @@ feature "etsy price" do
 
   scenario 'it shows the highest price' do
     visit '/price'
-    expect(page).to have_content("244")
+    expect(page).to have_content("245")
   end
 
 end
