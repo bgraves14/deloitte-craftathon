@@ -3,7 +3,8 @@
 
 Here is the brief we received:
 
-```The application you will be building today is a research tool based on data from Etsy.
+```
+The application you will be building today is a research tool based on data from Etsy.
 
 Etsy (for anyone not familiar) is a peer-to-peer marketplace for vintage and handmade goods.
 
