@@ -10,4 +10,20 @@ class EtsyJson < Sinatra::Base
     listings.price.to_s
   end
 
+  get '/quantity' do
+    "Quantity"
+  end
+
+  get '/materials' do
+    "Materials"
+  end
+
+  get '/tags' do
+    "Tags"
+  end
+
+  get '/categories' do
+    "Categories"
+  end
+
 end

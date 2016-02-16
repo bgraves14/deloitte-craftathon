@@ -1,4 +1,4 @@
-class Ranking
+module Ranking
 
   def all_objects(data, field)
     object_array = []

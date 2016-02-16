@@ -1,4 +1,5 @@
 require_relative "calculator"
+require_relative "ranking"
 require 'money'
 require 'money/bank/google_currency'
 require_relative 'etsy-data'
@@ -6,6 +7,7 @@ Money.default_bank = Money::Bank::GoogleCurrency.new
 
 class Listings
   include Calculator
+  include Ranking
 
   def price
     data = EtsyData.get_data
