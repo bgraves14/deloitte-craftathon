@@ -5,6 +5,9 @@ ruby '2.2.2'
 gem 'json'
 gem 'shotgun'
 gem 'sinatra'
+gem 'money'
+gem 'bank'
+gem 'google_currency'
 
 group :test do
   gem 'capybara'
