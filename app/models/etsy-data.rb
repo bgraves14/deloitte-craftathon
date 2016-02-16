@@ -1,10 +1,11 @@
-require "./keys"
 require "open-uri"
+require "json"
 
 class EtsyData
 
-  url = "https://openapi.etsy.com/v2/listings/active?api_key=" + apikey
   def get_data
-    JSON.load(open(url))
+    key = ENV["ETSY_KEY"]
+    url = "https://openapi.etsy.com/v2/listings/active?api_key=" + key
+    JSON.parse(open(url).read)
   end
 end
