@@ -1,4 +1,4 @@
-class Calculator
+module Calculator
   def average(data, field)
     new_data = filter_data(data, field)
     new_data.reduce(:+) / new_data.count
@@ -20,4 +20,3 @@ class Calculator
     data.map { |object| object[field].to_i }
   end
 end
-
